@@ -1,0 +1,9 @@
+{% if latest_backup_list %}
+    <ul>
+    {% for backups in latest_backup_list %}
+      <li><a href="/sqlserver/{{ backups.id }}/">{{ backups.database_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No backups are available.</p>
+{% endif %}
